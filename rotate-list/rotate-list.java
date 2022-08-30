@@ -21,9 +21,7 @@ class Solution {
             p=p.next;
             len++;
         }
-        while(k>len){
-           k=k-len;
-        }
+        k=k%len;
         
         p=head;
         while(k!=0){
