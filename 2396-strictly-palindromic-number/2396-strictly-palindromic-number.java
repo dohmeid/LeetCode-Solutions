@@ -11,8 +11,8 @@ class Solution {
             String ss = "";
            //for (int i=0; i<s.length(); i++) //no need to reverse string '_'
                // ss += s.charAt(i);
-             for (int i=0; i<s.length(); i++) {
-               if(i!=(s.length()/2) && s.charAt(i) != s.charAt(s.length()-1-i) )
+             for (int i=0; i<s.length()/2; i++) {
+               if(s.charAt(i) != s.charAt(s.length()-1-i) )
                         return false;
              }
         }
