@@ -18,13 +18,13 @@ class Solution {
     public List<Integer> inorderTraversal(TreeNode root) { //left-root-right
         
         if(root != null){
-        if(root.left != null)
-             sol = inorderTraversal(root.left);
-        
-        sol.add(root.val);
-        
-        if(root.right != null)
-            sol = inorderTraversal(root.right);
+            if(root.left != null)
+                 sol = inorderTraversal(root.left);
+
+            sol.add(root.val);
+
+            if(root.right != null)
+                sol = inorderTraversal(root.right);
         }
         return sol;
     }
