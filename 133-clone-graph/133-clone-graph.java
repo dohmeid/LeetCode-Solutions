@@ -26,11 +26,7 @@ class Solution {
         
         if(node == null)
             return null;
-      /*  if(node.neighbors.isEmpty() == true ){
-            Node n = new Node(node.val);
-            return n ;
-        }*/
-        
+ 
         Node n = new Node(node.val);
         hashSet.add(n.val);
         vis.add(n);
