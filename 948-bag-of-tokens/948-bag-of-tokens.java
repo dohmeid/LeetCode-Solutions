@@ -7,18 +7,18 @@ class Solution {
             return 0;
         
         int minus=0;
+        int len = tokens.length ;
         
-      for(int i=0 ; i<tokens.length ; i++){  
-           if(tokens[i] == -1)
-                continue;   
+      for(int i=0 ; i<len; i++){  
           
            if(power<tokens[i] && score>=1 && tokens.length-minus>1 ){ //play face down
-               for(int j=tokens.length-1 ; j>0 ; j--){
+               for(int j=len-1 ; j>0 ; j--){
                    if(tokens[j] != -1){
                         score--;
                         power += tokens[j];
                         tokens[j] = -1;
                         minus++;
+                        len--;
                        break;
                     }
                }
