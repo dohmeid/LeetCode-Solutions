@@ -2,7 +2,7 @@ class Solution {
     public int findLength(int[] nums1, int[] nums2) {
         
         int max=0;
-        
+        //sliding window
         for(int i=0; i<nums2.length; i++){
             int len=0,k = i,j=0;
             while(j<nums1.length && k<nums2.length){
