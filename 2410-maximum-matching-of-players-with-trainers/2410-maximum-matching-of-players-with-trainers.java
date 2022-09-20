@@ -14,19 +14,14 @@ class Solution {
             while(index2<trainers.length ){
                 if(players[index1] <= trainers[index2]){
                     trainers[index2] = 0;
-                   // players[index1] = 0;
                     res++;
                     flag=index2;
                     break;
                 }
-                
                 index2++;
             }
             
         }
-        
-        
-        
         
         return res;
     }
