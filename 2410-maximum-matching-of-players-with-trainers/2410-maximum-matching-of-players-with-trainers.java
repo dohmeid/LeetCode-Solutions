@@ -1,11 +1,9 @@
 
 class Solution {
     public int matchPlayersAndTrainers(int[] players, int[] trainers) {
-        int res=0;
-        int flag=0;
-        //sort arrays  in ascending Order
+        int res=0,flag=0;
         Arrays.sort(players);  
-        Arrays.sort(trainers);  
+        Arrays.sort(trainers);   //sort arrays  in ascending Order
        
         for(int i=0; i<players.length ;i++){
             int index1=i;
