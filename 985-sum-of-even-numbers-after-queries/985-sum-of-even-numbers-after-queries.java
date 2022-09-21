@@ -22,7 +22,7 @@ class Solution {
             }
             else if (nums[index]%2==0 && old%2!=0 ) 
                 even += nums[index];
-            else{ //if (nums[index]%2==0 && old%2==0 && nums[index]>old ){
+            else{ 
                 even -= old; 
                 even += nums[index];
             }
