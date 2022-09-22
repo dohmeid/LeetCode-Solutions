@@ -10,18 +10,15 @@ class Solution {
             
             if(c!=' ')
                 st.push(c);
-            
             else{
-                while(!st.isEmpty()){
+                while(!st.isEmpty())
                     news += st.pop();
-                }
                 news += " ";
-            }
-            
+            } 
         }
-         while(!st.isEmpty()){
-                    news += st.pop();
-        }
+        
+         while(!st.isEmpty())
+             news += st.pop();
         
        return news; 
     }
