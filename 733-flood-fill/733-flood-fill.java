@@ -1,4 +1,4 @@
-class Solution {
+/*class Solution {
     int [][] visited = new int[50][50];  
     int flag=0;
     int old_color=0;
@@ -26,9 +26,9 @@ class Solution {
     
     
     
-}
+}*/
 
-/* better solution
+// better solution
 
 class Solution {
     
@@ -55,5 +55,3 @@ class Solution {
     
     
 }
-
-*/
