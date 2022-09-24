@@ -7,8 +7,12 @@ class Solution {
             int cost = t[i][0];
             int cash = t[i][1];
             
-            mint = Math.max(mint, Math.min(cost, cash));
-            if(cost-cash>0)
+            //the last transaction that should be considered to create maximum ans possible
+            //also needed for the case when all transactions have cost<cashback
+            mint = Math.max(mint, Math.min(cost, cash)); 
+            
+            //the transactions where cost > cashback
+            if(cost-cash>0) 
                 mon += cost-cash;
             
         }
