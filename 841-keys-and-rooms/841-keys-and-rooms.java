@@ -13,12 +13,12 @@ class Solution {
                 if (!visited.contains(key)){
                     visited.add(key);
                     keys.push(key);
-                }
-                    
-                
+                    if(visited.size()==rooms.size())
+                        return true;
+                }     
             }
 
-          }
+        }
     
         return visited.size()==rooms.size();
     }
