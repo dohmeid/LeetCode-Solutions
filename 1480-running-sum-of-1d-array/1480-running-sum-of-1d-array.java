@@ -5,12 +5,8 @@ class Solution {
         int s=0;
         for(int i=0; i<nums.length; i++){
             s += nums[i];
-                sum[i] = s;
-            
+            sum[i] = s;
         }
-        
-        
-        
         return sum;
     }
 }
