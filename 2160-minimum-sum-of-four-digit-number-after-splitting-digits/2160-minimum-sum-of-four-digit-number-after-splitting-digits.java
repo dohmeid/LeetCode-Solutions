@@ -8,14 +8,9 @@ class Solution {
         }
         Arrays.sort(ar);
         
-        String n1 = Integer.toString(ar[0]);
-        String n2 = Integer.toString(ar[1]);
-        String n3 = Integer.toString(ar[2]);
-        String n4 = Integer.toString(ar[3]);
+        int num1 = ar[0]*10 + ar[2];
+        int num2 = ar[1]*10 + ar[3];
         
-        String num1 = n1 + n3;
-        String num2 = n2 + n4;
-        
-        return Integer.parseInt(num1)+Integer.parseInt(num2);
+        return num1+num2;
     }
 }
