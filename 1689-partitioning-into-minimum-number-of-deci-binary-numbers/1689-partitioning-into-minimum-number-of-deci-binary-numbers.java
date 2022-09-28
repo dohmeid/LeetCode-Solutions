@@ -8,8 +8,7 @@ class Solution {
             char c = n.charAt(i);
             s += c;
             int num = Integer.parseInt(s);
-            if(num > max)
-                max=num;
+            max = Math.max(max,num);
             s="";
         }
         
