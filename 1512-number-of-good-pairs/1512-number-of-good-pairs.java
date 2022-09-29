@@ -15,18 +15,14 @@ class Solution {
         //sol2
         HashMap<Integer, Integer> h = new HashMap<>(); //key is the number , value is the frequancy
          for(int n : nums){
-            if(!h.containsKey(n)) {
+            if(!h.containsKey(n))
                 h.put(n, 0);
-            }
              else{
                  int count = h.get(n);
                  h.put(n, ++count);
                  res += count;
              }
-
-             
-             
-         }
+        }
         
         return res;
     }
