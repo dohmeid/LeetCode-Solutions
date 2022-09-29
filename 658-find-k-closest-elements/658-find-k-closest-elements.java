@@ -1,4 +1,4 @@
-class Solution {
+class Solution { //solution using 2 pointers
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
         
         List<Integer> li = new ArrayList<Integer>();  
