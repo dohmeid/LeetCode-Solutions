@@ -7,10 +7,7 @@ class Solution {
         }
         
         for(int i=0;i<c.length ; i++){
-           if(c[i]+exc >= max)
-               res.add(true);
-            else
-                res.add(false);
+               res.add(c[i]+exc >= max);
         }
         
         return res;
