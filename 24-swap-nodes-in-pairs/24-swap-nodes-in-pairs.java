@@ -13,15 +13,12 @@ class Solution {
         
         if(head==null || head.next==null)
             return head;
-        
+
         int v1 = head.val;
         head.val = head.next.val;
         head.next.val = v1;
-        
         swapPairs( head.next.next);
         
         return head;
     }
-    
-    
 }
