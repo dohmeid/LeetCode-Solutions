@@ -9,20 +9,14 @@
  * }
  */
 class Solution {
+    ListNode prev = null;
     public ListNode reverseList(ListNode head) {
-        
+     
+     /*   solution 1 : using stack  
         if(head==null)
             return null;
         else if(head.next == null) //there is only head node
             return head;
-        else if(head.next.next == null){ //there is only 2 nodes
-            ListNode h = head;
-            ListNode sec = head.next;
-            sec.next = h;
-            h.next = null;
-            head = sec;
-            return head;
-        }
         else{
          
            Stack<ListNode> stack = new Stack<ListNode>();
@@ -50,5 +44,34 @@ class Solution {
             
             return head ;
         }
+        */
+        
+        /*solution2 : iteratively
+        if(head==null)
+            return null;
+        if(head.next == null) //there is only head node
+            return head;
+
+        ListNode newhead = null;
+        while(head!=null){
+             ListNode n = head.next;
+             head.next=newhead;
+             newhead = head;
+             head = n;
+        }
+        return newhead;
+        */
+        
+        //solution3 : recursively
+        if(head==null)
+            return head;
+        
+        ListNode n = head.next;
+        head.next = prev;
+        prev = head;
+        head =  n;
+        reverseList(head);
+          
+        return prev;
     }
 }
