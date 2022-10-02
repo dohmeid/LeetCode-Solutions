@@ -15,7 +15,6 @@ class Solution {
             return null;
         else if(head.next == null) //there is only head node
             return head;
-       
         else{
          
            Stack<ListNode> stack = new Stack<ListNode>();
