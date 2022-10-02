@@ -10,7 +10,8 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-        
+     
+     /*   solution 1 : using stack  
         if(head==null)
             return null;
         else if(head.next == null) //there is only head node
@@ -42,5 +43,33 @@ class Solution {
             
             return head ;
         }
+        */
+        
+        //solution2 : iteratively
+        if(head==null)
+            return null;
+        if(head.next == null) //there is only head node
+            return head;
+    
+            ListNode newhead = null;
+            while(head!=null){
+                 ListNode n = head.next;
+                 head.next=newhead;
+                newhead = head;
+                 head = n;
+                
+            }
+        
+        return newhead;
+        
+        
+        //solution2 : recursively
+     /*    if(head==null)
+            return head;
+        
+        reverseList(head.next);
+         
+        
+        return head;*/
     }
 }
