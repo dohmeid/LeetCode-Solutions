@@ -9,6 +9,7 @@
  * }
  */
 class Solution {
+    ListNode prev = null;
     public ListNode reverseList(ListNode head) {
      
      /*   solution 1 : using stack  
@@ -45,31 +46,32 @@ class Solution {
         }
         */
         
-        //solution2 : iteratively
+        /*solution2 : iteratively
         if(head==null)
             return null;
         if(head.next == null) //there is only head node
             return head;
-    
-            ListNode newhead = null;
-            while(head!=null){
-                 ListNode n = head.next;
-                 head.next=newhead;
-                newhead = head;
-                 head = n;
-                
-            }
-        
+
+        ListNode newhead = null;
+        while(head!=null){
+             ListNode n = head.next;
+             head.next=newhead;
+             newhead = head;
+             head = n;
+        }
         return newhead;
-        
+        */
         
         //solution2 : recursively
-     /*    if(head==null)
+        if(head==null)
             return head;
         
-        reverseList(head.next);
-         
-        
-        return head;*/
+        ListNode n = head.next;
+        head.next = prev;
+        prev = head;
+        head =  n;
+        reverseList(head);
+          
+        return prev;
     }
 }
