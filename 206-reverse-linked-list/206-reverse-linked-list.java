@@ -15,14 +15,7 @@ class Solution {
             return null;
         else if(head.next == null) //there is only head node
             return head;
-        else if(head.next.next == null){ //there is only 2 nodes
-            ListNode h = head;
-            ListNode sec = head.next;
-            sec.next = h;
-            h.next = null;
-            head = sec;
-            return head;
-        }
+       
         else{
          
            Stack<ListNode> stack = new Stack<ListNode>();
