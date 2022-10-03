@@ -1,7 +1,7 @@
 class Solution {
     public List<Integer> getRow(int rowIndex) {
         
-        
+    /* solution 1 : iterative     
         int n = rowIndex;
         ArrayList<List<Integer>> l = new ArrayList<List<Integer>>();
         int r=0 , c=0 ;
@@ -25,6 +25,22 @@ class Solution {
         }
      
         return l.get(n);
+        */
+        
+        //solution2: recursive
+        
+        if(rowIndex==0)
+            return Arrays.asList(1);
+        if(rowIndex==1)    
+            return Arrays.asList(1,1);
+        
+        List<Integer> prev = getRow(rowIndex-1);
+        List<Integer> curr = new ArrayList<Integer>();
+        curr.add(1);
+        for(int i=1; i<prev.size();i++)
+            curr.add( prev.get(i) + prev.get(i-1) );
+        curr.add(1);    
+        return curr;
     }
     
 }
