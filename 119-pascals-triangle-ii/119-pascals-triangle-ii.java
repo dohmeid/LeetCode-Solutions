@@ -1,5 +1,7 @@
 class Solution {
     public List<Integer> getRow(int rowIndex) {
+        
+        
         int n = rowIndex;
         ArrayList<List<Integer>> l = new ArrayList<List<Integer>>();
         int r=0 , c=0 ;
