@@ -1,15 +1,13 @@
 class Solution {
     public List<List<Integer>> generate(int numRows) {
         
-        List<List<Integer>> l = new ArrayList<List<Integer>>();
-         int r = 0;
-         int c = 0;
+         List<List<Integer>> l = new ArrayList<List<Integer>>();
+         int r = 0 , c = 0;
         
         while(numRows>0){
             List<Integer> l2 = new ArrayList<Integer>();
             
             for(int i=0; i<c+1 ; i++){
-                    
                 if(i==0 || i==r)
                     l2.add(1);
                 else{
@@ -20,23 +18,12 @@ class Solution {
             }
             
             l.add(l2);
-            
             r++;
             c++;
             numRows--;
         }
+        
         return l;
     }
-    
-    public int helper(int i , int j) {
-        if(j==0 || j==i-1 )
-            return 1;
-        else{
-            return helper(i-1,j) + helper(i-1,j-1);
-        }
-       
-    }
-    
-    
     
 }
