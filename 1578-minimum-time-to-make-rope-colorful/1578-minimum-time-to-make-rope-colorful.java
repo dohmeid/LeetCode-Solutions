@@ -23,7 +23,7 @@ class Solution {
         return res;
         */
         
-        //solution2: less time complexity
+        /*solution2: less time complexity - but still bad :( 
         int res=0, i=0;
         while(i<c.length()-1){
             int j=0;
@@ -43,8 +43,26 @@ class Solution {
             }   
                i=j; 
         }
-        
         return res;
+        */
         
+        //solution3 : best one - using recursion 
+        int res=0, i=0;
+        while(i<c.length()-1){
+           int j=0;
+           int sum=t[i] ,max=t[i];
+            for(j=i+1; j<c.length();j++){
+                if(c.charAt(i)==c.charAt(j)){
+                    sum += t[j];
+                    max = Math.max(max,t[j]);
+                }
+                    
+                else
+                    break;  
+            }
+                res += sum - max;
+               i=j; 
+        }
+        return res;
     }
 }
