@@ -3,14 +3,12 @@ class Solution {
          
         int res=0, i=0;
         while(i<c.length()-1){
-           int j=0;
-           int sum=t[i] ,max=t[i];
+           int j=0,sum=t[i] ,max=t[i];
             for(j=i+1; j<c.length();j++){
                 if(c.charAt(i)==c.charAt(j)){
                     sum += t[j];
                     max = Math.max(max,t[j]);
-                }
-                    
+                }   
                 else
                     break;  
             }
@@ -18,7 +16,5 @@ class Solution {
                i=j; 
         }
         return res;
-        
-         //solution3 : best one - using recursion 
     }
 }
