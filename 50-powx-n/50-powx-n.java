@@ -10,8 +10,12 @@ class Solution {
             return 0;
         if(n==Integer.MIN_VALUE && x>0)
             return 0;
+        if(n==Integer.MIN_VALUE && x<0)
+            return 1;
         if(n==Integer.MAX_VALUE && x<0)
             return -1;
+        if(n==Integer.MAX_VALUE && x>0)
+            return 0;
         
         if(n==1)
             return x;
