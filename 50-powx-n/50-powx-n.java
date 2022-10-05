@@ -10,8 +10,7 @@ class Solution {
             return 0;
         if(n==Integer.MIN_VALUE && x>0)
             return 0;
-        if(n==Integer.MIN_VALUE && x<0)
-            return 1;
+        
         if(n==Integer.MAX_VALUE && x<0)
             return -1;
         if(n==Integer.MAX_VALUE && x>0)
@@ -21,8 +20,6 @@ class Solution {
             return x;
         
         
-        
-        
         if(n>0)
             return helper(x,n);
         else
@@ -30,13 +27,11 @@ class Solution {
     }
     
     
-    // Tail Recursion was used to avoid Stack OverFlow error
-    double res = 1;
+    
     public double helper(double x, int n) {
-        if(n<=0 || res==0 )
-            return res;
-        res *= x;
-        return helper(x,--n) ;
+        if(n<=0  )
+            return 1;
+        return x*helper(x,--n) ;
     }
     
 }
