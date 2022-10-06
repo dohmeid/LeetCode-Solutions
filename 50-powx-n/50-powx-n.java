@@ -29,7 +29,10 @@ class Solution { //solution2: recursion
         
         if(n==0)
             return 1;
-        return x*helper(x,--n) ;
+        else if(n%2==0)
+            return helper(x*x,n/2);
+        else 
+            return x*helper(x,--n) ;
     }
     
 }
