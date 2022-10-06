@@ -1,9 +1,8 @@
-class Solution {
+//solution1 :easy //return Math.pow(x, n);
+
+class Solution { //solution2: recursion 
     public double myPow(double x, int n) {
         
-        //solution1 :easy //return Math.pow(x, n);
-        
-        //solution2: recursion 
         if(x==1 || n==0)
             return 1;
         if(x==0)
@@ -26,13 +25,9 @@ class Solution {
             return 1/helper(x,n*-1) ;
     }
     
-    
-    
-    public double helper(double x, int n) {
+    public double helper(double x, int n) {    
         
-        
-        
-        if(n<=0)
+        if(n==0)
             return 1;
         return x*helper(x,--n) ;
     }
