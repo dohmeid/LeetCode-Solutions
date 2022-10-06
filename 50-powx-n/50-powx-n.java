@@ -8,12 +8,13 @@ class Solution {
             return 1;
         if(x==0)
             return 0;
+        if(n==1)
+            return x;
         
         if(n==Integer.MIN_VALUE && x<0)
             return 1;
         if(n==Integer.MIN_VALUE && x>0)
             return 0;
-        
         if(n==Integer.MAX_VALUE && x<0)
             return -1;
         if(n==Integer.MAX_VALUE && x>0)
@@ -29,8 +30,8 @@ class Solution {
     
     public double helper(double x, int n) {
         
-        if(n==1)
-            return x;
+        
+        
         if(n<=0)
             return 1;
         return x*helper(x,--n) ;
