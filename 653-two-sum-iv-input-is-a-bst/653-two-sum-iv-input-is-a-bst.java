@@ -59,6 +59,6 @@ class Solution {
             return true;
         set.add(root.val);
         
-        return findTarget(root.right,k) || findTarget(root.left,k);
+        return findTarget(root.left,k) || findTarget(root.right,k);
     }
 }
