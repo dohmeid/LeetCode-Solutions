@@ -27,7 +27,7 @@ class Solution {
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             int key = entry.getKey();
             int val = entry.getValue() ;
-            if(key != val && map.containsKey(val))
+            if(map.containsKey(val) && key != val)
                 return true;
         }
 
