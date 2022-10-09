@@ -17,9 +17,7 @@ class Solution {
     Map<Integer, Integer> map = new HashMap<>(); //val is the key,  complement = sum-val is the value
     public boolean findTarget(TreeNode root, int k) {
         
-        if(root.left==null && root.right==null & root.val!=k) //1 node case
-            return false;
-    
+       
         //put each value and it's complement for the sum in hashap
         fillMap(root,k);
         
