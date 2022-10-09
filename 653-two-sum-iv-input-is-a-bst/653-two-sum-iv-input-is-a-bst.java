@@ -13,6 +13,8 @@
  *     }
  * }
  */
+
+/* solution1 :
 class Solution {
     Map<Integer, Integer> map = new HashMap<>(); //val is the key,  complement = sum-val is the value
     public boolean findTarget(TreeNode root, int k) {
@@ -43,4 +45,20 @@ class Solution {
     }
     
     
+}*/
+
+
+//solution2:
+class Solution {
+   Set<Integer> set = new HashSet<>();  //val is the  complement = k-val is the value
+    
+    public boolean findTarget(TreeNode root, int k) {
+        if(root==null)
+            return false;
+        if(set.contains(k-root.val))
+            return true;
+        set.add(root.val);
+        
+        return findTarget(root.right,k) || findTarget(root.left,k);
+    }
 }
