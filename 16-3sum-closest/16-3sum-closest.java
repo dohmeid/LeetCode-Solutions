@@ -29,7 +29,6 @@ class Solution {
                 if(Math.abs(target-sum) < Math.abs(diff)){
                     diff = target-sum;
                     res = sum;
-                  //  ++lindex;
                 }
                 if(sum == target)
                     return target;
