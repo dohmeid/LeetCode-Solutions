@@ -14,7 +14,7 @@
  * }
  */
 //solution1: recursive
-/*class Solution {
+class Solution {
     List<Integer> res = new ArrayList<>();
     public List<Integer> preorderTraversal(TreeNode root) { //pre-order : root->left->right 
         if(root==null)
@@ -24,10 +24,10 @@
         res = preorderTraversal(root.right);
         return res;
     }
-}*/
+}
 
 
-//solution2: iteravtive
+/*solution2: iteravtive
 class Solution {
     
     public List<Integer> preorderTraversal(TreeNode root) { //pre-order : root->left->right 
@@ -47,7 +47,7 @@ class Solution {
         }
         return res;
     }
-}
+}*/
 
 
 
