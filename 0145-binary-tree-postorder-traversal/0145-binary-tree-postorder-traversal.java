@@ -26,8 +26,8 @@ class Solution {
     }
 }*/
 
-//solution2: iteravtive
-class Solution {
+//solution2: iteravtive //using 2 stacks
+/*class Solution {
   
     public List<Integer> postorderTraversal(TreeNode root) { //postorder: left-right-root
         List<Integer> res = new ArrayList<>();
@@ -52,5 +52,27 @@ class Solution {
              res.add(st2.pop());
         
         return res; 
+    }
+}*/
+
+//solution3
+class Solution {
+  
+    public List<Integer> postorderTraversal(TreeNode root) { //postorder: left-right-root
+        LinkedList<Integer> res = new LinkedList<>();
+        if(root==null) return res;
+        Stack<TreeNode> st = new Stack<>();
+        st.push(root);
+        
+        while(!st.empty()){ 
+            TreeNode curr = st.pop();
+            res.addFirst(curr.val); //add at first , this method is like preorder but reverse
+            if(curr.left!=null)
+                st.push(curr.left);
+            if(curr.right!=null)
+                st.push(curr.right);
+            
+        }
+       return res; 
     }
 }
