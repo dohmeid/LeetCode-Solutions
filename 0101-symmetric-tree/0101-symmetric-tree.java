@@ -41,7 +41,6 @@ class Solution {
             return true;
         if(left==null || right==null || left.val!=right.val)
             return false;
-        else
-            return  helper(left.left,right.right) && helper(left.right,right.left) ;         
+        return  helper(left.left,right.right) && helper(left.right,right.left) ;         
     }
 }
