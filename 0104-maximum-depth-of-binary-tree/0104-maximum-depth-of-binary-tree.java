@@ -13,7 +13,8 @@
  *     }
  * }
  */
-class Solution { //Bottom-up recursion solution
+
+/*class Solution { //Bottom-up recursion solution
   
     public int maxDepth(TreeNode root) {
         
@@ -25,7 +26,28 @@ class Solution { //Bottom-up recursion solution
         
         return Math.max(left, right)+1;
     }
-}
+}*/
 
 
  //Top-down recursion solution
+class Solution { 
+    int ans=0;
+    public int maxDepth(TreeNode root) {
+        if(root==null)
+            return 0;        
+        return helper(root,1);
+    }
+    public int helper(TreeNode root, int d) {    
+        if(root==null)
+            return 0;
+         if (root.left == null && root.right == null) 
+                ans = Math.max(ans, d);
+        helper(root.left,d+1);
+        helper(root.right,d+1);
+        return ans;
+    }
+    
+}
+
+
+
