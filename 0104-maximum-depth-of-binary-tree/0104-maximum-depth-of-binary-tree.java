@@ -32,9 +32,7 @@
  //Top-down recursion solution
 class Solution { 
     int ans=0;
-    public int maxDepth(TreeNode root) {
-        if(root==null)
-            return 0;        
+    public int maxDepth(TreeNode root) {    
         return helper(root,1);
     }
     public int helper(TreeNode root, int d) {    
