@@ -20,6 +20,7 @@ class Node {
     }
 };
 */
+
 //sol1 : BFS using queue
 class Solution {
     public Node connect(Node root) {
@@ -27,16 +28,13 @@ class Solution {
             return root;
         
         root.next=null;
-        
         Queue<Node> q = new LinkedList<>();
         q.offer(root);
         
         while(q.size()!=0){
             int n = q.size();
-            
             for (int i=0 ; i<n ;i++){
                 Node r = q.poll();
-                
                 if(i+1 == n )
                     r.next=null;
                 else
@@ -45,16 +43,9 @@ class Solution {
                 if(r.left!=null)
                     q.offer(r.left);
                 if(r.right!=null)
-                    q.offer(r.right);
-                
-            }
-            
-            
-            
+                    q.offer(r.right);   
+            }     
         }
-        
-        
-        
        return root;
     }
 }
