@@ -6,6 +6,6 @@ class Solution {
             set.add(c);
         }
         
-        return (set.size()==26);
+        return set.size()==26;
     }
 }
