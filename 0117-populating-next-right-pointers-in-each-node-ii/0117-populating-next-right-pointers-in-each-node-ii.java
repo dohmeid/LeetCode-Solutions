@@ -20,7 +20,7 @@ class Node {
     }
 };
 */
-
+/*
 class Solution {
     public Node connect(Node root) {
          if(root==null)
@@ -48,3 +48,51 @@ class Solution {
        return root;
     }
 }
+*/
+
+
+//sol2 : DFS - recursive
+class Solution {
+    public Node connect(Node root) {
+        if(root==null)
+            return root;
+        
+        if(root.left!=null ){
+            if(root.right != null) 
+                root.left.next = root.right;
+            else
+                root.left.next = findRightNode(root.next);
+        }
+        
+        if(root.right!=null && root.next!=null)
+            root.right.next = findRightNode(root.next);
+        
+        connect(root.right);
+        connect(root.left);
+        return root;
+    }
+    
+    public Node findRightNode(Node root) {
+        Node temp = root;
+        while(temp != null) {
+            if(temp.left == null && temp.right == null) {
+                temp = temp.next;
+            }
+            else{
+                if(temp.left != null) return temp.left;
+                if(temp.right != null) return temp.right;
+            }
+        }
+        return null;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
