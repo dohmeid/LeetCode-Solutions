@@ -18,11 +18,10 @@ class Solution {
         
         if(l!=null && r!=null)
             return root;
-        else if(l!=null)
+        if(l!=null)
             return l;
-        else if(r!=null)
+        else //if(r!=null)
             return r;
-        else
-            return null;
+       
     }
 }
