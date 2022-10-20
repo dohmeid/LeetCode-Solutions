@@ -7,12 +7,12 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class Codec { //bfs
+public class Codec { //BFS
     
-   
     public String serialize(TreeNode root) {  // Encodes a tree to a single string. 
         if(root==null)
             return "";
+        
         String res = "";
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
@@ -52,9 +52,7 @@ public class Codec { //bfs
         
         int i=1;
         while(i<str.length){
-            
              TreeNode curr = q.poll();
-            
                 if(i%2!=0){ //odd - then left
                     if(Integer.parseInt(str[i])==5000)
                         curr.left = null;
@@ -62,18 +60,15 @@ public class Codec { //bfs
                         curr.left = new TreeNode(Integer.parseInt(str[i]));
                         q.offer(curr.left);   
                     }
-
                 }
-            
                 i++; //even - right
-                    if(Integer.parseInt(str[i])==5000)
-                        curr.right = null;
-                    else{
-                        curr.right = new TreeNode(Integer.parseInt(str[i]));
-                        q.offer(curr.right);   
-                    }
+                if(Integer.parseInt(str[i])==5000)
+                    curr.right = null;
+                else{
+                    curr.right = new TreeNode(Integer.parseInt(str[i]));
+                    q.offer(curr.right);   
+                }
                 
-        
             i++;
     }
         
