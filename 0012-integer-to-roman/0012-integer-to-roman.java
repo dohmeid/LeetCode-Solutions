@@ -1,7 +1,45 @@
+//solution1 : 
 class Solution {
-    public String intToRoman(int num) {
+    public String intToRoman(int num) {   
+        HashMap<Integer, String> map = new HashMap<>();
+        //add general cases
+        map.put(1, "I");
+        map.put(5, "V");
+        map.put(10, "X");
+        map.put(50, "L");
+        map.put(100, "C");
+        map.put(500, "D");
+        map.put(1000, "M");
+        //add special cases  
+        map.put(4, "IV");
+        map.put(9, "IX");
+        map.put(40, "XL");
+        map.put(90, "XC");
+        map.put(400, "CD");
+        map.put(900, "CM");
         
-    HashMap<Integer, String> map = new HashMap<>();
+        String res = "";  
+        int[] temp = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        
+        for(int i=0; i<temp.length; i++){
+            while(num >= temp[i]){
+            res += map.get(temp[i]);
+            num -= temp[i];
+          }
+        }
+       
+        return res;
+    }
+    
+}
+
+
+
+
+/* solution2: 
+class Solution {
+    public String intToRoman(int num) {    
+        HashMap<Integer, String> map = new HashMap<>();
         map.put(1,"I");
         map.put(2,"II");
         map.put(3,"III");
@@ -49,22 +87,5 @@ class Solution {
          
         return res;
     }
-}
+}*/
 
-/*
- //add general cases
-    map.put(1, "I");
-    map.put(5, "V");
-    map.put(10, "X");
-    map.put(50, "L");
-    map.put(100, "C");
-    map.put(500, "D");
-    map.put(1000, "M");
-    //add special cases  
-    map.put(4, "IV");
-    map.put(9, "IX");
-    map.put(40, "XL");
-    map.put(90, "XC");
-    map.put(400, "CD");
-    map.put(900, "CM");
-*/
