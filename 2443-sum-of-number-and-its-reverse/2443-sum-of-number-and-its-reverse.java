@@ -3,10 +3,13 @@ class Solution {
         
         HashSet<Integer> set = new HashSet<>();
         for(int i=0;i<=num;i++){
-            set.add(i+Integer.parseInt(new StringBuilder(Integer.toString(i)).reverse().toString()));
+            int n = i;
+            //to reverse n
+            StringBuilder sb = new StringBuilder(Integer.toString(i));
+            int rev = Integer.parseInt(sb.reverse().toString());
+            if(n+rev==num)
+                return true;
         }
-         return set.contains(num);
-        
-        
+         return false ;   
     }
 }
