@@ -4,7 +4,7 @@ class Solution {
      int start = 0;
      int end = nums.length-1;
      
-     while(end > start){
+     while(nums[end]>0 && nums[start]<0){
          if( (-1*nums[start]) ==nums[end])
              return nums[end];
          else if((-1*nums[start]) > nums[end]  )
