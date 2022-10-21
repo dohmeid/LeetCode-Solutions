@@ -13,3 +13,13 @@ class Solution {
          return false ;   
     }
 }
+
+
+/* to reverse an int - convert it to string builder and reverse the string then convert it to int
+int num;
+String n = Integer.toString(num);
+StringBuilder sb = new StringBuilder(n);
+String rev = sb.reverse().toString();
+int rev = Integer.parseInt(rev);
+
+*/
