@@ -1,4 +1,4 @@
-/* sol1 : 2 pointers
+// sol1 : 2 pointers
 class Solution {
     public int findMaxK(int[] nums) {
      Arrays.sort(nums);   
@@ -16,8 +16,8 @@ class Solution {
             
         return -1;
     }
-} */
-
+} 
+/*
 class Solution {
     public int findMaxK(int[] nums) {
         Arrays.sort(nums);   
@@ -33,4 +33,4 @@ class Solution {
         }
         return -1;
     }
-}
+}*/
