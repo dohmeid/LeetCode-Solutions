@@ -2,7 +2,7 @@ class Solution {
     public boolean sumOfNumberAndReverse(int num) {
         
         HashSet<Integer> set = new HashSet<>();
-        for(int i=0;i<=num;i++){
+        for(int i=num/2;i<=num;i++){
             int n = i;
             //to reverse n
             StringBuilder sb = new StringBuilder(Integer.toString(i));
