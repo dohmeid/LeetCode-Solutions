@@ -28,6 +28,18 @@ class Solution {
         }
         
         
+        /*other solution
+         for (int i = 0; i < 26; i++) {
+            char current = (char) ('a' + i);
+            if (map.getOrDefault("" + current + current, 0) > 0) {
+                res += 2;
+                break;
+            }
+        }
+        */
+        
+        
+        
         
         return res;
     }
