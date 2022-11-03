@@ -17,6 +17,7 @@ class Solution {
             }
         }
         
+        /*
         for (Map.Entry<String, Integer> w : map.entrySet()) {
             String s = w.getKey() ;
             int val = w.getValue();
@@ -25,7 +26,16 @@ class Solution {
                 break;
             }
         }
+        */
         
+        //faster code
+         for (int i = 0; i < 26; i++) {
+            char current = (char) ('a' + i);
+            if (map.getOrDefault("" + current + current, 0) > 0) {
+                res += 2;
+                break;
+            }
+        }
         
         
         
