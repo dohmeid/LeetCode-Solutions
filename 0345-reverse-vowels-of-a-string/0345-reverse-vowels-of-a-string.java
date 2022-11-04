@@ -5,7 +5,7 @@ class Solution {
         int end = s.length()-1;
         String vowels = "aeiouAEIOU";
         
-        while(end >= start){ //using 2 pointers
+        while(end > start){ //using 2 pointers
             
             char c1 = s.charAt(start);
             char c2 = s.charAt(end);
