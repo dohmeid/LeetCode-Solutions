@@ -16,12 +16,10 @@ class Solution {
                 start++;
                 end--;
             }
-            else if(vowels.indexOf(c1)!=-1){
+            else if(vowels.indexOf(c1)!=-1)
                 end--;
-            }
-            else if(vowels.indexOf(c2)!=-1){
+            else if(vowels.indexOf(c2)!=-1)
                 start++;
-            }
             else{
                  start++;
                 end--;
