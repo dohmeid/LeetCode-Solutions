@@ -1,7 +1,6 @@
 class Solution {
     public String makeGood(String s) {
-       if(s=="" || s.length()==1)
-            return s;
+       
        Stack<Character> st = new Stack<>();
        st.push(s.charAt(0));
         
