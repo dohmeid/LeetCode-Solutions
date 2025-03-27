@@ -2,15 +2,15 @@
  * @param {Function[]} functions
  * @return {Function}
  */
-var compose = function(functions) {
+var compose = (functions) => {
     
+    //method1 - brute force solution
     return function(x) {
-        let result = x;
         for(let i=functions.length-1; i>=0;i--){
             let fi = functions[i];
-            result = fi(result);
+            x = fi(x);
         }
-        return result;
+        return x;
         
     }
 };
