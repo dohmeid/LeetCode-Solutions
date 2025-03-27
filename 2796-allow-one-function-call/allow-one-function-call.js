@@ -2,11 +2,11 @@
  * @param {Function} fn
  * @return {Function}
  */
-var once = function(fn) {
-    let count=0;
+var once = fn => {
+    let flag=false;
     return function(...args){
-        if(count==0){
-            count++;
+        if(!flag){
+            flag=true;
             return fn(...args);
         }
         return undefined;
