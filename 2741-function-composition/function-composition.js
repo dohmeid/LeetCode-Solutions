@@ -3,7 +3,7 @@
  * @return {Function}
  */
 var compose = (functions) => {
-    
+
     //method1 - brute force solution
     /*return function(x) {
         let result = x;
@@ -15,12 +15,15 @@ var compose = (functions) => {
     }*/
 
     //method2 - using reduceRight (traverse an array in reverse order)
-    return function(x) {
-       
-       let result = functions.reduceRight((res,f)=>{
-        return f(res);
-       },x);
-    
+    return function (x) {
+
+        if (functions.length === 0)
+            return x;
+
+        let result = functions.reduceRight((res, f) => {
+            return f(res);
+        }, x);
+
         return result;
     }
 };
