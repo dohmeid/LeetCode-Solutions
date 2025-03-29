@@ -4,25 +4,18 @@
  * @return {Promise}
  */
 var addTwoPromises = async function (promise1, promise2) {
-    let sum = 0;
-    /*promise1
-        .then(response => {
-            console.log(response); // Runs if resolved
-            sum += response;
-            return promise2;
-        })
-        .then(response => {
-            console.log(response); // Runs if resolved
-            sum += response;
-            return sum;
-        });*/
 
+    //wait for both promise1 and promise2 to resolve
+    const results =  await Promise.all([promise1, promise2])
+    return results[0]+results[1];
+
+    /*
+    let sum = 0;
     await Promise.all([promise1, promise2]).then(results => {
-        console.log("Results:", results); // ["Result 1", "Result 2"]
-        sum = sum + results[0] + results[1];
+        sum += results[0] + results[1];
     });
     return sum;
-
+    */
 };
 
 /**
