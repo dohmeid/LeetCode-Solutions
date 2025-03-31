@@ -5,6 +5,8 @@
  */
 var timeLimit = function (fn, t) {
 
+    //method1
+    /*
     return async function (...args) {
         const myPromise = new Promise((resolve, reject) => {
 
@@ -21,8 +23,17 @@ var timeLimit = function (fn, t) {
                     clearTimeout(timeoutID);
                 });
         });
-
         return myPromise;
+    }
+    */
+
+    //method2
+    return async function (...args) {
+        const rejectedPromise = new Promise((resolve, reject) => {
+            setTimeout(() => reject("Time Limit Exceeded"), t);
+        });
+        const fnPromise = fn(...args);
+        return Promise.race([fnPromise, rejectedPromise]);
     }
 };
 
