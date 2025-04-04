@@ -12,21 +12,18 @@ var chunk = function (arr, size) {
         return [arr];
 
     let temp = [];
-    let count = 0;
     let result=[];
 
     for (let item of arr) {
         temp.push(item);
-        count++;
 
-        if(count===size){
+        if(temp.length===size){
             result.push(temp);
-            count=0;
             temp=[];
         }
     }
 
-    if(count!==0){
+    if(temp.length!==0){
          result.push(temp);
     }
 
