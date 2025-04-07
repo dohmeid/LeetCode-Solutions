@@ -3,20 +3,15 @@
  * @return {Object}
  */
 Array.prototype.groupBy = function (fn) {
-    let res = {
-
-    };
+    let res = {};
 
     for (let i = 0; i < this.length; i++) {
         const key = fn(this[i]);
 
-        if (key in res) {
-            res[key].push(this[i]);
-        }
-        else {
+        if (!(key in res))
             res[key] = [];
-            res[key].push(this[i]);
-        }
+
+        res[key].push(this[i]);
     }
 
     return res;
